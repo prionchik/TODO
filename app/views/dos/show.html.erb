@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @do.text %>
+</p>
+
+<p>
+  <strong>Iscompleted:</strong>
+  <%= @do.isCompleted %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @do.project_id %>
+</p>
+
+<%= link_to 'Edit', edit_do_path(@do) %> |
+<%= link_to 'Back', dos_path %>

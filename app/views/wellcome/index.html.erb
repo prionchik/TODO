@@ -1,0 +1,32 @@
+<h1>Задачи<%= link_to "+", '#', id: "create_todo" %></h1>
+<br></br>
+<table>
+  <p>
+    <% @projects.each do |project| %>
+    <p>
+      <h2><%= project.title %></h2>
+      <% project.dos.each do |w| %>
+        <blockquote><b><li><%= w['text'] %></li></b></blockquote>
+      <% end %>
+    </p>
+    <% end %>
+
+  </p>
+
+  <div id="new_task">
+      <div id="new_task_container">
+        <h2>НОВАЯ ЗАДАЧА</h2>
+        <div id="line"></div>
+        <%= form_for :todo_create, url: index_path,:html => { :id => "form" } do |form| %>
+          <%= form.text_field :text, placeholder:"Название задачи..."%> <br>
+          <%= form.select(:project_id, @projects_titles) %> <br>
+          <%= link_to "ОТМЕНА", '#', id: "cancel" %>
+          <%= link_to "ОК", '#', id: "index_path" %>
+        <% end %>
+      </div>
+    </div>
+
+
+
+
+</table>

@@ -12,10 +12,15 @@ development:
 
 test:
   <<: *default
-  database: testdb
+  database: todo_development
 
 production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  url: <%= ENV['DATABASE_URL'] %>
+  Host: ec2-54-235-86-101.compute-1.amazonaws.com
+  database: d61dndb7btm3ma
+  user: riqefrslsolpll
+  port: 5432
+  password: ead224208d677c9862a5317f9edfa6ca995b64868077d55a0ca6033933217523
+  URI: postgres://riqefrslsolpll:ead224208d677c9862a5317f9edfa6ca995b64868077d55a0ca6033933217523@ec2-54-235-86-101.compute-1.amazonaws.com:5432/d61dndb7btm3ma
